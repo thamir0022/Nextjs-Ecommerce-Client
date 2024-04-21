@@ -11,6 +11,7 @@ import PaymentIcon from "@mui/icons-material/Payment";
 import { useRouter } from "next/navigation";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Image from 'next/image'
 
 export default function CartPage(req) {
   const { cartProducts, addToCart, removeProduct, clearCart } =
@@ -137,10 +138,13 @@ export default function CartPage(req) {
                           className="flex items-center justify-evenly w-full h-80 p-3 bg-white rounded-lg shadow-lg"
                         >
                           <Link href={`/product/${product._id}`} className="h-fit w-3/5">
-                            <img
+                            <Image
                               className="h-44 p-2 rounded-md m-auto mix-blend-multiply"
                               src={product.images ? product.images[0] : ""}
                               alt={product.title}
+                              height={100}
+                              width={100}
+                              quality={100}
                             />
                             <p className="text-center text-clip font-semibold mt-2">
                               {product.title}
