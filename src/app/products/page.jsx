@@ -6,7 +6,7 @@ import { dbConnect } from "../../lib/db.js";
 import { Product } from "../../models/product.js";
 import BackToTop from "@/components/BackToTop";
 
-export default async function page() {
+export default async function AllProductsPage() {
   await dbConnect();
   const allProducts = await getAllProducts();
   return (

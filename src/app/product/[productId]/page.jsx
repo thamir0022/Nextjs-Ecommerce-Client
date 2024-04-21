@@ -10,7 +10,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Tooltip, Zoom } from "@mui/material";
 import { CartContext } from "@/components/CartContext";
 
-export default function page() {
+export default function ProductPage() {
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
   const [addingToCart, setAddingToCart] = useState(false);

@@ -10,7 +10,7 @@ import CreditScoreIcon from "@mui/icons-material/CreditScore";
 import Link from "next/link";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 
-export default function page() {
+export default function PaymentPage() {
   const { clearCart } = useContext(CartContext);
   const searchParams = useSearchParams();
   const paymentSuccess = searchParams.get("payment_success");
@@ -20,7 +20,7 @@ export default function page() {
     if (!isLoading && isAuthenticated && paymentSuccess === "true") {
       clearCart();
     }
-  }, [paymentSuccess, isLoading]);
+  }, [isLoading]);
 
   return (
     <>
@@ -63,7 +63,7 @@ export default function page() {
               </div>
 
               <p className="custom-message text-center">
-                We're sorry, but the payment for your order has failed. Please
+                We&apos;re sorry, but the payment for your order has failed. Please
                 try again or contact support for assistance.
               </p>
 

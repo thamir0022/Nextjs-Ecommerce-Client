@@ -3,7 +3,7 @@ import Header from '../components/Header'
 import Link  from 'next/link'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-export default function notFoundPage() {
+export default function NotFoundPage() {
   return (
     <div>
         <Header/>
