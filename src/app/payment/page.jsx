@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext, useEffect } from "react";
+import React, { Suspense, useContext, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { CartContext } from "../../components/CartContext";
 import Header from "../../components/Header";
@@ -23,7 +23,7 @@ export default function PaymentPage() {
   }, [isLoading]);
 
   return (
-    <>
+    <Suspense fallback={<div>loading...</div>}>
       <Header />
       {paymentSuccess === "true" ? (
         <div className="w-screen h-screen flex items-center justify-center">
@@ -63,8 +63,8 @@ export default function PaymentPage() {
               </div>
 
               <p className="custom-message text-center">
-                We&apos;re sorry, but the payment for your order has failed. Please
-                try again or contact support for assistance.
+                We&apos;re sorry, but the payment for your order has failed.
+                Please try again or contact support for assistance.
               </p>
 
               <div className="custom-actions">
@@ -81,6 +81,6 @@ export default function PaymentPage() {
         )
       )}
       <Footer />
-    </>
+    </Suspense>
   );
 }
