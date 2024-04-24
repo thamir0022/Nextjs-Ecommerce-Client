@@ -8,7 +8,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 export default function FeaturedProduct({ product }) {
   return (
     <div className="bg-[#222] p-10">
-      <div className="flex flex-col md:flex-row gap-5">
+      <div className="flex flex-col md:flex-row justify-between">
         <div className="w-full my-auto md:w-2/5">
           <h1 className="text-5xl text-white">{product?.title}</h1>
           <p className="pt-5 text-[#aaa]">{product?.description}</p>
@@ -36,9 +36,9 @@ export default function FeaturedProduct({ product }) {
             </button>
           </div>
         </div>
-        <div className="w-full md:w-3/5">
+        <div className="w-full md:w-2/5">
           <Image
-            className="mx-auto rounded-lg shadow-lg"
+            className="max-h-full max-w-full mx-auto rounded-lg"
             height={150}
             width={500}
             quality={100}
